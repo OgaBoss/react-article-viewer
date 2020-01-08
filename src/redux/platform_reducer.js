@@ -6,7 +6,7 @@ const initialState = {
   error: null,
 };
 
-export default function platformReducers(state = initialState, action) {
+export default (state = initialState, action) => {
   if (action.type === FETCH_PLATFORM_STARTED) {
     return {
       ...state,
@@ -15,7 +15,6 @@ export default function platformReducers(state = initialState, action) {
   }
   
   if (action.type === FETCH_PLATFORM_SUCCESS) {
-    console.log(action)
     return {
       ...state,
       loading: false,

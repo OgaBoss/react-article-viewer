@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react'
 
-const Platforms = ({platforms = {}, loading, error, fetchPlatforms}) => {
+const Platforms = ({platform_reducer: {platforms = [], loading, error}, fetchPlatforms}) => {
   useEffect(() => {
     fetchPlatforms()
-  })
+  }, [fetchPlatforms])
   
   return (
     <div>

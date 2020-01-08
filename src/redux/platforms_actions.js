@@ -5,7 +5,7 @@ export const fetchPlatforms = () => {
   return async (dispatch) => {
     try {
       dispatch(fetchPlatformStarted());
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/sources?apiKey=${process.env.REACT_APP_API_KEY}&pageSize=20`)
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}sources?apiKey=${process.env.REACT_APP_API_KEY}&pageSize=20`)
       dispatch(fetchPlatformsSuccess(response.data.sources))
     } catch (e) {
       dispatch(fetchPlatformError(e))

@@ -2,11 +2,9 @@ import {connect} from 'react-redux'
 import platforms from './platforms'
 import {fetchPlatforms} from '../../redux/platforms_actions'
 
-const mapStateToProps = ({platforms, loading, error}, ownProps) => {
+const mapStateToProps = ({platform_reducer}, ownProps) => {
   return {
-    platforms,
-    loading,
-    error
+    platform_reducer
   }
 }
 
