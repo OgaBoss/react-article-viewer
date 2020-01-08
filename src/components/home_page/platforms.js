@@ -6,8 +6,8 @@ const Platforms = ({platform_reducer: {platforms = [], loading, error}, fetchPla
   }, [fetchPlatforms])
   
   return (
-    <div>
-      {loading}
+    <div className=''>
+    
     </div>
   )
 };

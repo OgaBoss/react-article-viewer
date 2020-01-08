@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import platforms from './platforms'
+import Platforms from './platforms'
 import {fetchPlatforms} from '../../redux/platforms_actions'
 
 const mapStateToProps = ({platform_reducer}, ownProps) => {
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(platforms);
+export default connect(mapStateToProps, mapDispatchToProps)(Platforms);
