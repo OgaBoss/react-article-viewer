@@ -1,3 +1,20 @@
 .platforms {
     flex: 0 1 30%;
+    overflow: scroll;
+}
+
+.platform:hover {
+    border-left-color: #1467c1;
+    border-left-width: 10px;
+    background-color: #f8f8f8;
+}
+
+.loading {
+    flex: 0 1 30%;
+    align-self: center;
+    background-color: #a6a6a6;
+}
+
+.loading p {
+    text-align: center;
 }
