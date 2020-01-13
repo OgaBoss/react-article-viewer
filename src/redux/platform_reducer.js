@@ -1,4 +1,4 @@
-import {FETCH_PLATFORM_SUCCESS, FETCH_PLATFORM_ERROR, FETCH_PLATFORM_STARTED} from "./actionTypes";
+import {FETCH_PLATFORM_SUCCESS, FETCH_PLATFORM_ERROR, FETCH_PLATFORM_STARTED, FILTER_PLATFORMS} from "./actionTypes";
 
 const initialState = {
   loading: false,
@@ -19,7 +19,7 @@ export default (state = initialState, action) => {
       ...state,
       loading: false,
       error: null,
-      platforms: [...state.platforms, action.payload]
+      platforms: action.payload
     }
   }
   
@@ -28,6 +28,14 @@ export default (state = initialState, action) => {
       ...state,
       loading: false,
       error: action.payload.error
+    }
+  }
+  
+  if (action.type === FILTER_PLATFORMS) {
+    console.log(state.platforms)
+    return {
+      ...state,
+      platforms: state.platforms.filter(platform => platform.name.toLowerCase().startsWith(action.payload.toLowerCase()) )
     }
   }
   

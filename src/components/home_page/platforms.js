@@ -1,20 +1,35 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
 import styles from './platform.module.css'
 import PlatformContainer from './platform_container'
+import {filterPlatforms} from '../../redux/platforms_actions'
 
 const Platforms = ({platform_reducer: {platforms = [], loading, error}, fetchPlatforms}) => {
+  const [search, setSearch] = useState('')
+  let [allPlatform, setAllPlatform] = useState([])
+  const dispatch = useDispatch()
+  
   useEffect(() => {
     fetchPlatforms()
   }, [fetchPlatforms])
   
-  if(platforms.length > 0) {
+  useEffect(() => {
+    setAllPlatform(platforms)
+  }, [platforms])
+  
+  const filterPlatform = () => {
+    allPlatform = platforms.filter(platform => platform.name.toLowerCase().startsWith(search.toLowerCase()))
+  }
+  
+  if(allPlatform.length > 0) {
     return (
-      <div className={`h-full border-r-2  ${styles.platforms}`}>
+      <div className={`h-full border-r-2 pr-4 ${styles.platforms}`}>
         <div className='h-16 w-full bg-gray-200'>
           <p className='p-4 text-2xl'>All News Platforms</p>
         </div>
+        <input onKeyDown={filterPlatform()} onChange={e => setSearch(e.target.value)} value={search} type="text" className='my-4 pl-4 h-12 w-full border-2 border-black-100'/>
         <ul>
-          {platforms[0].map(platform => (
+          {allPlatform.map(platform => (
             <PlatformContainer key={platform.id} platform={platform}/>
           ))}
         </ul>

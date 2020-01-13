@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import Platforms from './platforms'
-import {fetchPlatforms} from '../../redux/platforms_actions'
+import {fetchPlatforms, filterPlatforms} from '../../redux/platforms_actions'
 
 const mapStateToProps = ({platform_reducer}, ownProps) => {
   return {
@@ -10,7 +10,8 @@ const mapStateToProps = ({platform_reducer}, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchPlatforms: () => dispatch(fetchPlatforms())
+    fetchPlatforms: () => dispatch(fetchPlatforms()),
+    // filterPlatforms: (value) => dispatch(filterPlatforms(value))
   }
 }
 
