@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
-import styles from './platform.module.css'
-import PlatformContainer from './platform_container'
+import styles from '../../assets/css/platform.module.css'
+import PlatformContainer from '../platform/platform_container'
 
 const Platforms = ({platform_reducer: {platforms = [], loading, error}, fetchPlatforms}) => {
   const [search, setSearch] = useState('')

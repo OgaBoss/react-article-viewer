@@ -1,5 +1,5 @@
 import React from 'react';
-import PlatformsContainer from './components/home_page/platforms_container'
+import PlatformsContainer from './components/platforms/platforms_container'
 function App() {
   return (
 	  <div className="App w-full h-full" >
