@@ -1,4 +1,9 @@
-import {FETCH_PLATFORM_SUCCESS, FETCH_PLATFORM_ERROR, FETCH_PLATFORM_STARTED, FILTER_PLATFORMS} from "./actionTypes";
+import {
+  FETCH_PLATFORM_SUCCESS,
+  FETCH_PLATFORM_ERROR,
+  FETCH_PLATFORM_STARTED,
+  FILTER_PLATFORMS
+} from "./platformActionTypes";
 import axios from 'axios'
 
 export const fetchPlatforms = () => {
@@ -33,3 +38,7 @@ export const filterPlatforms = (value) => ({
   type: FILTER_PLATFORMS,
   payload: value
 })
+
+export const fetchPlatformNews = (value) => ({
+
+});

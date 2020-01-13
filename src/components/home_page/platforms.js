@@ -1,13 +1,10 @@
 import React, {useEffect, useState} from 'react'
-import {useSelector, useDispatch} from 'react-redux'
 import styles from './platform.module.css'
 import PlatformContainer from './platform_container'
-import {filterPlatforms} from '../../redux/platforms_actions'
 
 const Platforms = ({platform_reducer: {platforms = [], loading, error}, fetchPlatforms}) => {
   const [search, setSearch] = useState('')
   let [allPlatform, setAllPlatform] = useState([])
-  const dispatch = useDispatch()
   
   useEffect(() => {
     fetchPlatforms()

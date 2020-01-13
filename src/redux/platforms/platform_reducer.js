@@ -1,4 +1,9 @@
-import {FETCH_PLATFORM_SUCCESS, FETCH_PLATFORM_ERROR, FETCH_PLATFORM_STARTED, FILTER_PLATFORMS} from "./actionTypes";
+import {
+  FETCH_PLATFORM_SUCCESS,
+  FETCH_PLATFORM_ERROR,
+  FETCH_PLATFORM_STARTED,
+  FILTER_PLATFORMS
+} from "./platformActionTypes";
 
 const initialState = {
   loading: false,
