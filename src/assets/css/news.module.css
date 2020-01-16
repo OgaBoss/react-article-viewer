@@ -1,0 +1,4 @@
+.news {
+    flex: 0 1 69%;
+    overflow: scroll;
+}

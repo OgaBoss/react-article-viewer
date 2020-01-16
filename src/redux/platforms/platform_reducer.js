@@ -2,7 +2,6 @@ import {
   FETCH_PLATFORM_SUCCESS,
   FETCH_PLATFORM_ERROR,
   FETCH_PLATFORM_STARTED,
-  FILTER_PLATFORMS
 } from "./platformActionTypes";
 
 const initialState = {
@@ -33,14 +32,6 @@ export default (state = initialState, action) => {
       ...state,
       loading: false,
       error: action.payload.error
-    }
-  }
-  
-  if (action.type === FILTER_PLATFORMS) {
-    console.log(state.platforms)
-    return {
-      ...state,
-      platforms: state.platforms.filter(platform => platform.name.toLowerCase().startsWith(action.payload.toLowerCase()) )
     }
   }
   
