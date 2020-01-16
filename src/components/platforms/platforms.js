@@ -8,7 +8,7 @@ const Platforms = ({platform_reducer: {platforms = [], loading, error}, fetchPla
   
   useEffect(() => {
     fetchPlatforms()
-  }, [fetchPlatforms])
+  }, [])
   
   useEffect(() => {
     setAllPlatform(platforms)

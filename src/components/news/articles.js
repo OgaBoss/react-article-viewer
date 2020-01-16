@@ -24,7 +24,7 @@ const Articles = () => {
   }), shallowEqual);
   
   
-  if (articles.length > 0) {
+  if (articles.length > 0 && !loading) {
     return (
       <div className={`${styles.news}`}>
         <NewsHeading />
