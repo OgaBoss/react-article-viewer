@@ -4,13 +4,14 @@ import {
   FETCH_PLATFORM_STARTED,
 } from "./platformActionTypes";
 
-const initialState = {
+export const initialState = {
   loading: false,
   platforms: [],
   error: null,
 };
 
-export default (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
+  console.log(state)
   if (action.type === FETCH_PLATFORM_STARTED) {
     return {
       ...state,

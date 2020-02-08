@@ -3,13 +3,13 @@ import {
   FETCH_PLATFORM_ERROR,
   FETCH_PLATFORM_STARTED,
 } from "./platformActionTypes";
-import axios from 'axios'
+import Service from "./service";
 
 export const fetchPlatforms = () => {
   return async (dispatch) => {
     try {
       dispatch(fetchPlatformStarted());
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/sources?apiKey=${process.env.REACT_APP_API_KEY}&pageSize=20`)
+      const response = await Service.fetchPlatforms();
       dispatch(fetchPlatformsSuccess(response.data.sources))
     } catch (e) {
       dispatch(fetchPlatformError(e))
