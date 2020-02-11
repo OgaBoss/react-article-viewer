@@ -1,9 +1,13 @@
 import React from 'react';
 import styles from '../../assets/css/platform.module.css'
+import { useSelector, useDispatch } from 'react-redux'
+import {fetchPlatformNews} from "../../redux/news/news_actions";
 
-const Platform = ({platform, currentSelectedSource,  fetchPlatformNews}) => {
+const Platform = ({platform}) => {
+  const currentSelectedSource = useSelector(({news_reducer}) => news_reducer.currentSelectedSource);
+  const dispatch = useDispatch();
   const handleClick = () => {
-    fetchPlatformNews(platform.id)
+    dispatch(fetchPlatformNews(platform.id))
   };
  return (
   <li

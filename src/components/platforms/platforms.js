@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../../assets/css/platform.module.css'
-import PlatformContainer from '../platform/platform_container'
+import Platform from '../platform/platform'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchPlatforms} from "../../redux/platforms/platforms_actions";
 
@@ -31,8 +31,8 @@ const Platforms = () => {
         </div>
         <input onKeyDown={filterPlatform()} onChange={e => setSearch(e.target.value)} value={search} type="text" className='my-4 pl-4 h-12 w-full border-2 border-black-100'/>
         <ul>
-          {allPlatform.map(platform => (
-            <PlatformContainer key={platform.id} platform={platform}/>
+          {allPlatform.map((platform, index) => (
+            <Platform key={index} platform={platform}/>
           ))}
         </ul>
       </div>

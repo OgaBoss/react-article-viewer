@@ -11,7 +11,7 @@ export const NewsHeading = () => {
   }));
   return (
     <div className='h-16 w-full bg-gray-200'>
-      <p className='p-4 text-2xl text-center'>{currentSelectedSource ? currentSelectedSource : 'No selected news source' }</p>
+      <p className='p-4 text-2xl text-center' data-testid="heading">{currentSelectedSource ? currentSelectedSource : 'No selected news source' }</p>
     </div>
   )
 };

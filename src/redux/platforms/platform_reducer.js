@@ -11,7 +11,6 @@ export const initialState = {
 };
 
 export const reducer = (state = initialState, action) => {
-  console.log(state)
   if (action.type === FETCH_PLATFORM_STARTED) {
     return {
       ...state,

@@ -3,7 +3,7 @@ import {
   FETCH_PLATFORM_ERROR,
   FETCH_PLATFORM_STARTED,
 } from "./platformActionTypes";
-import Service from "./service";
+import Service from "../service";
 
 export const fetchPlatforms = () => {
   return async (dispatch) => {
